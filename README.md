@@ -1,7 +1,7 @@
 # CommandCooldown
 Sunucunuzda komut girebilme saniyesi ekler.
 # Süreyi Nasıl Değiştiririm?
-Eklentinin 27. satırında şöyle bir kod var;
+Eklentinin 43. satırında şöyle bir kod var;
 ```php
 self::$players[$e->getName()] = time() + 4;
 ```
