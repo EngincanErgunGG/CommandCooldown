@@ -8,7 +8,7 @@ use pocketmine\{
     event\player\PlayerCommandPreprocessEvent,
     event\player\PlayerJoinEvent,
     event\player\PlayerQuitEvent,
-    Player
+    event\Player
 };
 
 class CmdCooldown extends PluginBase implements Listener
@@ -22,17 +22,17 @@ class CmdCooldown extends PluginBase implements Listener
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
     }
     
-    public function onJoin(PlayerJoinEvent $event)
+    public function onJoin(PlayerJoinEvent $event): void
     {
         self::$players[$event->getPlayer()->getName()] = time();
     }
     
-    public function onQuit(PlayerQuitEvent $event)
+    public function onQuit(PlayerQuitEvent $event): void
     {
         if (isset(self::$players[$event->getPlayer()->getName()])) unset(self::$players[$event->getPlayer()->getName()]);
     }
     
-    public function onCommandPre(PlayerCommandPreprocessEvent $event)
+    public function onCommandPre(PlayerCommandPreprocessEvent $event): void
     {
         $e = $event->getPlayer();
         $str = str_split($event->getMessage());
