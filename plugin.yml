@@ -1,5 +1,5 @@
 name: CommandCooldown
-api: 3.20.0
+api: 4.0.0
 version: 1.0
 main: KurSkyTR\CmdCooldown
 author: EngincanErgunGG
